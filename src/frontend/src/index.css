@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Light mode (not primary use case, but defined) */
+    --background: 0.12 0.01 240;
+    --foreground: 0.95 0.01 240;
+    --card: 0.16 0.015 240;
+    --card-foreground: 0.95 0.01 240;
+    --popover: 0.18 0.015 240;
+    --popover-foreground: 0.95 0.01 240;
+    --primary: 0.72 0.18 185;
+    --primary-foreground: 0.08 0.01 240;
+    --secondary: 0.22 0.02 240;
+    --secondary-foreground: 0.85 0.01 240;
+    --muted: 0.20 0.015 240;
+    --muted-foreground: 0.60 0.02 240;
+    --accent: 0.78 0.16 75;
+    --accent-foreground: 0.08 0.01 240;
+    --destructive: 0.60 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.28 0.02 240;
+    --input: 0.22 0.02 240;
+    --ring: 0.72 0.18 185;
+    --chart-1: 0.72 0.18 185;
+    --chart-2: 0.78 0.16 75;
+    --chart-3: 0.65 0.20 300;
+    --chart-4: 0.70 0.18 145;
+    --chart-5: 0.68 0.22 30;
+    --sidebar: 0.14 0.012 240;
+    --sidebar-foreground: 0.95 0.01 240;
+    --sidebar-primary: 0.72 0.18 185;
+    --sidebar-primary-foreground: 0.08 0.01 240;
+    --sidebar-accent: 0.20 0.015 240;
+    --sidebar-accent-foreground: 0.85 0.01 240;
+    --sidebar-border: 0.28 0.02 240;
+    --sidebar-ring: 0.72 0.18 185;
+  }
+
+  .dark {
+    --background: 0.12 0.01 240;
+    --foreground: 0.95 0.01 240;
+    --card: 0.16 0.015 240;
+    --card-foreground: 0.95 0.01 240;
+    --popover: 0.18 0.015 240;
+    --popover-foreground: 0.95 0.01 240;
+    --primary: 0.72 0.18 185;
+    --primary-foreground: 0.08 0.01 240;
+    --secondary: 0.22 0.02 240;
+    --secondary-foreground: 0.85 0.01 240;
+    --muted: 0.20 0.015 240;
+    --muted-foreground: 0.60 0.02 240;
+    --accent: 0.78 0.16 75;
+    --accent-foreground: 0.08 0.01 240;
+    --destructive: 0.60 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.28 0.02 240;
+    --input: 0.22 0.02 240;
+    --ring: 0.72 0.18 185;
+    --chart-1: 0.72 0.18 185;
+    --chart-2: 0.78 0.16 75;
+    --chart-3: 0.65 0.20 300;
+    --chart-4: 0.70 0.18 145;
+    --chart-5: 0.68 0.22 30;
+    --sidebar: 0.14 0.012 240;
+    --sidebar-foreground: 0.95 0.01 240;
+    --sidebar-primary: 0.72 0.18 185;
+    --sidebar-primary-foreground: 0.08 0.01 240;
+    --sidebar-accent: 0.20 0.015 240;
+    --sidebar-accent-foreground: 0.85 0.01 240;
+    --sidebar-border: 0.28 0.02 240;
+    --sidebar-ring: 0.72 0.18 185;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-teal {
+    color: oklch(0.72 0.18 185);
+  }
+  .text-gold {
+    color: oklch(0.78 0.16 75);
+  }
+  .bg-teal {
+    background-color: oklch(0.72 0.18 185);
+  }
+  .bg-gold {
+    background-color: oklch(0.78 0.16 75);
+  }
+  .border-teal {
+    border-color: oklch(0.72 0.18 185);
+  }
+  .border-gold {
+    border-color: oklch(0.78 0.16 75);
+  }
+  .glow-teal {
+    box-shadow: 0 0 20px oklch(0.72 0.18 185 / 0.3);
+  }
+  .glow-gold {
+    box-shadow: 0 0 20px oklch(0.78 0.16 75 / 0.3);
+  }
+  .gradient-teal-gold {
+    background: linear-gradient(135deg, oklch(0.72 0.18 185), oklch(0.78 0.16 75));
+  }
+  .text-gradient-teal-gold {
+    background: linear-gradient(135deg, oklch(0.72 0.18 185), oklch(0.78 0.16 75));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-dark {
+    background-color: oklch(0.16 0.015 240);
+    border: 1px solid oklch(0.28 0.02 240);
+  }
+  .card-dark-hover {
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .card-dark-hover:hover {
+    border-color: oklch(0.72 0.18 185 / 0.5);
+    box-shadow: 0 0 20px oklch(0.72 0.18 185 / 0.1);
+  }
+
+  /* Status badge utilities */
+  .status-pending {
+    background-color: oklch(0.78 0.16 75 / 0.1);
+    border-color: oklch(0.78 0.16 75 / 0.3);
+    color: oklch(0.78 0.16 75);
+  }
+  .status-approved {
+    background-color: oklch(0.72 0.18 185 / 0.1);
+    border-color: oklch(0.72 0.18 185 / 0.3);
+    color: oklch(0.72 0.18 185);
+  }
+  .status-rejected {
+    background-color: oklch(0.60 0.22 25 / 0.1);
+    border-color: oklch(0.60 0.22 25 / 0.3);
+    color: oklch(0.60 0.22 25);
+  }
+}
